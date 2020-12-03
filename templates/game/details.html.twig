@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} Details du jeu {{ game.name }} {% endblock %}
+
+{% block body %}
+    <h1 class="my-4">{{ game.name }}</h1>
+    <p>Categories : 
+        <strong>{{ name }}</strong>
+    </p>
+    <p>{{ game.description }}</p>
+    <a href="{{ path('home') }}" class="btn btn-success">Retour à la page d'accueil</a>
+    <a href="{{ path('user_details', { id: game.user.id }) }}" class="btn btn-info">Voir l'utilisateur du jeu</a>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base' %}
+
+{% block title %}{{ parent() }}  {% endblock %}
+
+{% block body %}
+    <h2>List</h2>
+    {% include 'incs\_games_list.html.twig' with { games: category.name } %}
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profile Edit{% endblock %}
+
+{% block body %}
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+    <h1 class="my-4">Modifier son Profile</h1>
+
+    {{ form_start(profileForm) }}
+        {{ form_row(profileForm.firstname) }}
+        {{ form_row(profileForm.lastname) }}
+        {{ form_row(profileForm.email) }}
+        {{ form_row(profileForm.avatar) }}
+        
+        {{ form_row(profileForm.description, {
+            'label': 'Veuillez vous descrire en quelques lignes'
+        }) }}
+        {{ form_row(profileForm.submit) }}
+
+
+        {# <button type="submit" class="btn btn-success">Register</button> #}
+    {{ form_end(profileForm) }}
+{% endblock %}
